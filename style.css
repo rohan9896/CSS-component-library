@@ -10,6 +10,7 @@
     --lightOrange: #ff9f00;
     --orange: #fb641b;
     --greenishBlue: #17a2b8;
+    --grey: #f0e9e6;
 }
 
 .primary-button {
@@ -23,8 +24,9 @@
 }
 
 .icon-button {
-    padding: 0.1rem;
-    background-color: var(--pink);
+    background-color: var(--grey);
+    border: none;
+    padding: 0.5rem;
 }
 
 .icon-button > img {
