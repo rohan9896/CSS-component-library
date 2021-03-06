@@ -1,4 +1,5 @@
 import React from "react";
+import IconButton from "./IconButton";
 import PrimaryButton from "./PrimaryButton";
 
 function Buttons() {
@@ -6,6 +7,7 @@ function Buttons() {
     <div>
       <h1>Buttons</h1>
       <PrimaryButton />
+      <IconButton />
     </div>
   );
 }

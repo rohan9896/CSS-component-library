@@ -12,6 +12,9 @@
   --grey: #f0e9e6;
 }
 
+
+/* Buttons */
+/* Primary Button */
 .primary-button {
   padding: 0.8rem 2rem;
   color: white;
@@ -51,6 +54,8 @@
   background-color: var(--grey);
 }
 
+
+/* icon button */
 .icon-button {
   background-color: var(--grey);
   border: none;
