@@ -1,0 +1,8 @@
+.primaryButton__container {
+    display: flex;
+    justify-content: center;
+}
+
+.primaryButton__container > button {
+    margin: 2rem;
+}

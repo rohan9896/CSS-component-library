@@ -1,15 +1,13 @@
-import React from 'react'
+import React from "react";
+import PrimaryButton from "./PrimaryButton";
 
 function Buttons() {
-    return (
-        <div>
-            <h1>Buttons</h1>
-            <div>
-                <p>Primary Button</p>
-                
-            </div>
-        </div>
-    )
+  return (
+    <div>
+      <h1>Buttons</h1>
+      <PrimaryButton />
+    </div>
+  );
 }
 
-export default Buttons
+export default Buttons;
