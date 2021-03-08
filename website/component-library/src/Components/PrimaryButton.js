@@ -2,80 +2,77 @@ import React, { useState } from "react";
 import "../style.css";
 import "./PrimaryButton.css";
 
+const colors = [
+  {
+    id: 1,
+    colorName: `blue`,
+  },
+  {
+    id: 2,
+    colorName: `pink`,
+  },
+  {
+    id: 3,
+    colorName: `red`,
+  },
+  {
+    id: 4,
+    colorName: `yellow`,
+  },
+  {
+    id: 5,
+    colorName: `lightgreen`,
+  },
+  {
+    id: 6,
+    colorName: `purple`,
+  },
+  {
+    id: 7,
+    colorName: `lightOrange`,
+  },
+  {
+    id: 8,
+    colorName: `orange`,
+  },
+  {
+    id: 9,
+    colorName: `greenishBlue`,
+  },
+  {
+    id: 10,
+    colorName: `grey`,
+  },
+];
+
+// const test = `primary-button pink`; {test}
+
 function PrimaryButton() {
   const [buttonColorCode, setButtonColorCode] = useState(`blue`);
 
   return (
     <div>
       <h2>Primary Button</h2>
-      <div className="primaryButton__buttonContainer">
-        <button
-          onClick={() => setButtonColorCode(`blue`)}
-          className="primary-button blue"
-        >
-          Primary Button
-        </button>
-        <button
-          onClick={() => setButtonColorCode(`pink`)}
-          className="primary-button pink"
-        >
-          Primary Button
-        </button>
-        <button
-          onClick={() => setButtonColorCode(`red`)}
-          className="primary-button red"
-        >
-          Primary Button
-        </button>
-        <button
-          onClick={() => setButtonColorCode(`yellow`)}
-          className="primary-button yellow"
-        >
-          Primary Button
-        </button>
-        <button
-          onClick={() => setButtonColorCode(`lightgreen`)}
-          className="primary-button lightgreen"
-        >
-          Primary Button
-        </button>
-        <button
-          onClick={() => setButtonColorCode(`purple`)}
-          className="primary-button purple"
-        >
-          Primary Button
-        </button>
-        <button
-          onClick={() => setButtonColorCode(`lightOrange`)}
-          className="primary-button lightOrange"
-        >
-          Primary Button
-        </button>
-        <button
-          onClick={() => setButtonColorCode(`orange`)}
-          className="primary-button orange"
-        >
-          Primary Button
-        </button>
-        <button
-          onClick={() => setButtonColorCode(`greenishBlue`)}
-          className="primary-button greenishBlue"
-        >
-          Primary Button
-        </button>
-        <button
-          onClick={() => setButtonColorCode(`grey`)}
-          className="primary-button grey"
-        >
-          Primary Button
-        </button>
-      </div>
+      <ul className="primaryButton__buttonList">
+        {colors.map((colorObj) => {
+          return (
+            <li key={colorObj.id}>
+              <button
+                onClick={() => setButtonColorCode(colorObj.colorName)}
+                className={`primary-button ${colorObj.colorName}`}
+              >
+                Primary Button
+              </button>
+            </li>
+          );
+        })}
+      </ul>
       <div className="primaryButton__codeContainer">
-        <p>{`<button class="primary-button ${buttonColorCode} ">Primary Button</button>`}</p>
+        <p>{`<button class="primary-button ${buttonColorCode}">Primary Button</button>`}</p>
         <button
           onClick={() =>
             navigator.clipboard.writeText(
-              `<button class="primary-button ${buttonColorCode} ">Primary Button</button>`
+              `<button class="primary-button ${buttonColorCode}">Primary Button</button>`
             )
           }
         >
@@ -87,3 +84,87 @@ function PrimaryButton() {
 }
 
 export default PrimaryButton;
+
+// function PrimaryButton() {
+//   const [buttonColorCode, setButtonColorCode] = useState(`blue`);
+
+//   return (
+//     <div>
+//       <h2>Primary Button</h2>
+//       <div className="primaryButton__buttonContainer">
+//         <button
+//           onClick={() => setButtonColorCode(`blue`)}
+//           className="primary-button blue"
+//         >
+//           Primary Button
+//         </button>
+//         <button
+//           onClick={() => setButtonColorCode(`pink`)}
+//           className="primary-button pink"
+//         >
+//           Primary Button
+//         </button>
+//         <button
+//           onClick={() => setButtonColorCode(`red`)}
+//           className="primary-button red"
+//         >
+//           Primary Button
+//         </button>
+//         <button
+//           onClick={() => setButtonColorCode(`yellow`)}
+//           className="primary-button yellow"
+//         >
+//           Primary Button
+//         </button>
+//         <button
+//           onClick={() => setButtonColorCode(`lightgreen`)}
+//           className="primary-button lightgreen"
+//         >
+//           Primary Button
+//         </button>
+//         <button
+//           onClick={() => setButtonColorCode(`purple`)}
+//           className="primary-button purple"
+//         >
+//           Primary Button
+//         </button>
+//         <button
+//           onClick={() => setButtonColorCode(`lightOrange`)}
+//           className="primary-button lightOrange"
+//         >
+//           Primary Button
+//         </button>
+//         <button
+//           onClick={() => setButtonColorCode(`orange`)}
+//           className="primary-button orange"
+//         >
+//           Primary Button
+//         </button>
+//         <button
+//           onClick={() => setButtonColorCode(`greenishBlue`)}
+//           className="primary-button greenishBlue"
+//         >
+//           Primary Button
+//         </button>
+//         <button
+//           onClick={() => setButtonColorCode(`grey`)}
+//           className="primary-button grey"
+//         >
+//           Primary Button
+//         </button>
+//       </div>
+//       <div className="primaryButton__codeContainer">
+//         <p>{`<button class="primary-button ${buttonColorCode} ">Primary Button</button>`}</p>
+//         <button
+//           onClick={() =>
+//             navigator.clipboard.writeText(
+//               `<button class="primary-button ${buttonColorCode} ">Primary Button</button>`
+//             )
+//           }
+//         >
+//           Copy
+//         </button>
+//       </div>
+//     </div>
+//   );
+// }

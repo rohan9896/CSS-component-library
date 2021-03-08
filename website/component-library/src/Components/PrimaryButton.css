@@ -1,13 +1,13 @@
-.primaryButton__buttonContainer {
+.primaryButton__buttonList {
+    list-style-type: none;
     display: flex;
     justify-content: center;
     flex-flow: row wrap;
 }
 
-.primaryButton__buttonContainer > button {
+.primaryButton__buttonList > li {
     margin: 1.5rem;
 }
-
 
 .primaryButton__codeContainer {
     background-color: #f0e9e6;
@@ -35,5 +35,8 @@
 @media screen and (max-width: 768px) {
     .primaryButton__codeContainer {
         margin: 0;
+    }
+    p {
+        word-wrap: break-word;
     }
 }
