@@ -1,5 +1,5 @@
 .iconButton__buttonList {
-    list-style-type: none;
+  list-style-type: none;
   display: flex;
   justify-content: center;
   flex-flow: row wrap;
@@ -29,15 +29,15 @@
 }
 
 .iconButton__codeContainer > button:hover {
-    color: white;
-    background-color: #2874f0;
+  color: white;
+  background-color: #2874f0;
 }
 
 @media screen and (max-width: 768px) {
-    .iconButton__codeContainer {
-        margin: 0;
-    }
-    p {
-        word-wrap: break-word;
-    }
+  .iconButton__codeContainer {
+    margin: 0;
+  }
+  p {
+    word-wrap: break-word;
+  }
 }

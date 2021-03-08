@@ -49,10 +49,24 @@ const colors = [
 
 function PrimaryButton() {
   const [buttonColorCode, setButtonColorCode] = useState(`blue`);
+  const [linkButtonClicked, setLinkButtonClicked] = useState(false);
+  const [linkVal, setLinkVal] = useState("");
 
   return (
     <div>
-      <h2>Primary Button</h2>
+      <div className="primaryButton__headingContainer">
+        <h2>Primary Button</h2>
+        <button onClick={() => setLinkButtonClicked(!linkButtonClicked)}>
+          {linkButtonClicked ? "Hide Link Button" : "Add Link Button"}
+        </button>
+      </div>
+      {linkButtonClicked && (
+        <textarea
+          placeholder="enter link here"
+          value={linkVal}
+          onChange={(e) => setLinkVal(e.target.value)}
+        ></textarea>
+      )}
       <ul className="primaryButton__buttonList">
         {colors.map((colorObj) => {
           return (
@@ -61,18 +75,23 @@ function PrimaryButton() {
                 onClick={() => setButtonColorCode(colorObj.colorName)}
                 className={`primary-button ${colorObj.colorName}`}
               >
-                Primary Button
+                {linkButtonClicked ? "Link Button" : "Normal Button"}
               </button>
             </li>
           );
         })}
       </ul>
       <div className="primaryButton__codeContainer">
-        <p>{`<button class="primary-button ${buttonColorCode}">Primary Button</button>`}</p>
+        {linkButtonClicked ? (
+          <p>{`<a href="${linkVal}" role="button"><button class="primary-button  ${buttonColorCode}">Link Button</button></a>`}</p>
+        ) : (
+          <p>{`<button class="primary-button ${buttonColorCode}">Normal Button</button>`}</p>
+        )}
+        {/* <p>{`<button class="primary-button ${buttonColorCode}">Primary Button</button>`}</p> */}
         <button
           onClick={() =>
             navigator.clipboard.writeText(
-              `<button class="primary-button ${buttonColorCode}">Primary Button</button>`
+              linkButtonClicked ? `<a href="${linkVal}" role="button"><button class="primary-button  ${buttonColorCode}">Link Button</button></a>` : `<button class="primary-button ${buttonColorCode}">Normal Button</button>`
             )
           }
         >
